@@ -1,0 +1,19 @@
+{
+  "name": "typescript-clojure-interpreter",
+  "version": "1.0.0",
+  "description": "Clojure interpreter in typescript for Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkshayGuptaK/typescript-clojure-interpreter.git"
+  },
+  "author": "AkshayGuptaK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AkshayGuptaK/typescript-clojure-interpreter/issues"
+  },
+  "homepage": "https://github.com/AkshayGuptaK/typescript-clojure-interpreter#readme"
+}
