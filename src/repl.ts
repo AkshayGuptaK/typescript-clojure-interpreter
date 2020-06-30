@@ -1,6 +1,7 @@
-export function repl(interpreter: (input: string) => string | null): void {
-  const stdin = process.openStdin();
-  stdin.addListener("data", function (text) {
+type Interpreter = (input: string) => string | null;
+
+function processInput(interpreter: Interpreter) {
+  return function (text): void {
     try {
       const response = interpreter(text.toString().trim());
       if (response != null) {
@@ -13,5 +14,10 @@ export function repl(interpreter: (input: string) => string | null): void {
         console.error(err);
       }
     }
-  });
+  };
+}
+
+export function repl(interpreter: Interpreter): void {
+  const stdin = process.openStdin();
+  stdin.addListener("data", processInput(interpreter));
 }
