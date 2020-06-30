@@ -6,4 +6,4 @@ node_modules/
 .vscode/
 
 # Ignore ts outdir
-.build/
+build/
