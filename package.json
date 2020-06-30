@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AkshayGuptaK/typescript-clojure-interpreter/issues"
   },
-  "homepage": "https://github.com/AkshayGuptaK/typescript-clojure-interpreter#readme"
+  "homepage": "https://github.com/AkshayGuptaK/typescript-clojure-interpreter#readme",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
 }

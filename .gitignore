@@ -4,3 +4,6 @@ node_modules/
 
 # Ignore vs code
 .vscode/
+
+# Ignore ts outdir
+.dist/
