@@ -1,7 +1,7 @@
 type Interpreter = (input: string) => string | null;
 
 function processInput(interpreter: Interpreter) {
-  return function (text: Record<string, unknown>): void {
+  return function (text): void {
     try {
       const response = interpreter(text.toString().trim());
       if (response != null) {
