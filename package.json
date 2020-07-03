@@ -3,11 +3,12 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Clojure interpreter in typescript for Node JS",
-  "main": "src/index.ts",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
   "scripts": {
     "build": "tsc",
     "start": "tsc && node --experimental-modules build/index.js",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/AkshayGuptaK/typescript-clojure-interpreter#readme",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^5.0.1",
     "@types/jest": "^26.0.3",
     "@types/node": "^14.0.14",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
@@ -29,6 +31,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
+    "rollup": "^2.18.2",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.5"
   },
