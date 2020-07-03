@@ -6,8 +6,8 @@
   "main": "build/index.js",
   "module": "build/index.es.js",
   "scripts": {
-    "build": "tsc",
-    "start": "tsc && node --experimental-modules build/index.js",
+    "build": "tsc && rollup -c",
+    "start": "node --experimental-modules build/index.js",
     "test": "jest --watch"
   },
   "repository": {
