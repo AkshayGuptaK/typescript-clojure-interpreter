@@ -3,15 +3,15 @@ import {
   isWhitespace,
   isNumber,
   isParanthesis,
-  isQuote,
-} from "./identify.js";
+  //   isQuote,
+} from "./identify";
 
 interface Token {
   type: string;
   value: string;
 }
 
-export const tokenize = (input: string): Token[] => {
+function tokenize(input: string): Token[] {
   const tokens: Token[] = [];
   let cursor = 0;
 
@@ -53,4 +53,6 @@ export const tokenize = (input: string): Token[] => {
     throw new Error(`Unrecognized character ${character}`);
   }
   return tokens;
-};
+}
+
+export default tokenize;
