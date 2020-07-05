@@ -40,17 +40,27 @@ describe("tokenize", () => {
     expect(result).toEqual([
       {
         type: "Number",
-        value: "22",
+        value: 22,
       },
     ]);
   });
 
-  it("should recognize words", () => {
+  it("should recognize symbols", () => {
     const result = tokenize("abc");
     expect(result).toEqual([
       {
-        type: "Word",
+        type: "Name",
         value: "abc",
+      },
+    ]);
+  });
+
+  it("should recognize strings", () => {
+    const result = tokenize('"abc 22 ()"');
+    expect(result).toEqual([
+      {
+        type: "String",
+        value: "abc 22 ()",
       },
     ]);
   });

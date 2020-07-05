@@ -3,12 +3,12 @@ import {
   isWhitespace,
   isNumber,
   isParanthesis,
-  //   isQuote,
+  isQuote,
 } from "./identify";
 
 interface Token {
   type: string;
-  value: string;
+  value: string | number;
 }
 
 function tokenize(input: string): Token[] {
@@ -33,18 +33,41 @@ function tokenize(input: string): Token[] {
     }
 
     if (isNumber(character)) {
+      let number = character;
+      while (isNumber(input[++cursor])) {
+        number += input[cursor];
+      }
+
       tokens.push({
         type: "Number",
-        value: character,
+        value: parseInt(number),
       });
-      cursor++;
       continue;
     }
 
     if (isLetter(character)) {
+      let symbol = character;
+      while (isLetter(input[++cursor] || "")) {
+        symbol += input[cursor];
+      }
+
       tokens.push({
-        type: "Letter",
-        value: character,
+        type: "Name",
+        value: symbol,
+      });
+      continue;
+    }
+
+    if (isQuote(character)) {
+      let string = "";
+
+      while (!isQuote(input[++cursor])) {
+        string += input[cursor];
+      }
+
+      tokens.push({
+        type: "String",
+        value: string,
       });
       cursor++;
       continue;
@@ -56,3 +79,5 @@ function tokenize(input: string): Token[] {
 }
 
 export default tokenize;
+
+// for pure interpreter, can just put items in array instead of adding metadata in token format
