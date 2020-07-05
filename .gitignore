@@ -2,8 +2,5 @@
 node_modules/
 .node_modules_global/
 
-# Ignore vs code
-.vscode/
-
 # Ignore ts outdir
 build/
